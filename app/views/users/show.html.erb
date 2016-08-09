@@ -1,0 +1,12 @@
+
+<% @user.goals.each do |goal| %>
+<ul>
+  <% if goal.private && current_user.id == @user.id %>
+    <li><%= goal.title %> </li>
+    <li><%= goal.body %></li>
+  <% elsif !goal.private %>
+    <li><%= goal.title %></li>
+    <li><%= goal.body %></li>
+  <% end %>
+</ul>
+<% end %>

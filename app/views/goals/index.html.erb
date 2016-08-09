@@ -1,0 +1,12 @@
+<% @goals.each do |goal| %>
+  <% unless goal.private %>
+    <%= link_to goal.title, goal_url(goal)%>
+    <% if current_user.id == goal.user_id %>
+      <%= link_to "Edit Goal", edit_goal_url(goal) %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+<%= link_to 'Create New Goal', new_goal_url  %>
